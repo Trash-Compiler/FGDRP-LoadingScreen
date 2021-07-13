@@ -35,6 +35,8 @@ let totalFiles = 50;
 let totalCalled = false;
 let downloadingFileCalled = false;
 let percentage = 0;
+let permanent = false;
+let allowIncrement = true;
 
 /**
  * Print debug content to console.
@@ -137,8 +139,6 @@ function DownloadingFile (fileName) {
     });
 };
 
-let allowIncrement = true;
-
 /**
  * Set the status.
  * @param {string} status The current status.
@@ -199,8 +199,6 @@ const setLoad = (percentage) => {
     debug(`${percentage}% Loaded`);
     $(`.overhaul`).css(`left`, `${percentage}%`);
 };
-
-let permanent = false;
 
 $(document).ready(() => {
     // Load everything in when ready.
