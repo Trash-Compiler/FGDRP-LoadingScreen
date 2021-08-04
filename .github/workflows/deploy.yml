@@ -1,0 +1,33 @@
+name: Deploy CD
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  deploy:
+    name: Build
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      - name: Deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: '${{ secrets.SFTP_USERNAME }}'
+          server: '${{ secrets.SFTP_SERVER }}'
+          ssh_private_key: ${{ secrets.SFTP_PRIVKEY }} 
+          local_path: './src/*'
+          remote_path: '/var/www/sftp/gmod/familyguy'
+          args: '-o ConnectTimeout=5'
