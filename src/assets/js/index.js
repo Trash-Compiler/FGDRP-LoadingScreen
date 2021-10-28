@@ -11,7 +11,7 @@ const config = {
     title: `Family Guy Online`, // Title of your server.
 
     test: {
-        serverURL: `alru.ga`, // The IP to your server.
+        serverURL: `alru.xyz`, // The IP to your server.
         mapName: `Map Name`, // The name of the map on your server.
         maxPlayers: 128 // Number of player slots on your server.
     },
@@ -21,7 +21,7 @@ const config = {
     enableAnnouncements: true, // Enable announcements?
     announceMessages: [
         `Enjoy your stay!`,
-        `Join our Discord at discord.alru.ga!`,
+        `Join our Discord at discord.alru.xyz!`,
         `Loading Screen made by DamienVesper#5225`
     ],
     announcementLength: 3e3, // Duration of an announcement, in milliseconds.
