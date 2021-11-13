@@ -1,14 +1,10 @@
 //
 const texts = [
-    "Cartman: “I am NOTHING like Family Guy! When I make jokes they are inherent to a story! Deep situational and emotional jokes based on what is relevant and has a point, not just one random interchangeable joke after another!”",
-    "“I am a cop, and you will respect my authoritah!” – Cartman",
-    "“Don’t you dare call me a Cartman!” – Stan",
-    "“Don’t lie, Stan. Lying makes you sterile.” – Mr. Garrison",
-    "“I’m not fat, I’m festively plump.” –Cartman",
-    "“Drugs are bad, mmkay?” –Mr. Mackey",
-    "“All animals kill, and the animals that don’t kill are stupid ones like cows and turtles and stuff.” –Kyle",
-    "“Screw you guys, I’m going home!” –Cartman",
-    "“Hell, everything’s legal in Mexico. It’s the American way!” –Jimbo"
+    "Have fun or something",
+    "Family guy is pretty cool",
+    "much wow",
+    "doge is epic",
+    "gamer man",
 ];
 let count = 0;
 let index = 0;
@@ -34,12 +30,9 @@ function type() {
 
 // Random Backgrounds
 const backgrounds = [
-    "assets/img/background.jpg",
-    "assets/img/background2.jpg",
-    "assets/img/background3.jpg",
-    "assets/img/background4.jpg",
-    "assets/img/background5.jpg",
-    "assets/img/background6.jpg",
+    "assets/img/family-guy.jpg",
+    "assets/img/family-guy2.jpg",
+    "assets/img/family-guy3.jpg",
 ]
 let curBackground = 0;
 
