@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+body {
+  margin: auto;
+  padding: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: url(../img/background.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+strong {
+  font-weight: 600;
+  color: #e74c3c;
+}
+
+.topleft {
+  margin: auto;
+  padding: auto;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  color: white;
+  -webkit-filter: drop-shadow(0 0 0.5rem black);
+          filter: drop-shadow(0 0 0.5rem black);
+}
+
+.topleft .titleWelcome {
+  margin: auto;
+  font-size: 2em;
+}
+
+.topleft .loading {
+  margin: auto;
+  font-size: 1.5em;
+}
+
+.bottomleft {
+  margin: auto;
+  padding: auto;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  color: white;
+  -webkit-filter: drop-shadow(0 0 0.5rem black);
+          filter: drop-shadow(0 0 0.5rem black);
+}
+
+.bottomleft p {
+  margin: auto;
+}
+
+.bottomleft .tips {
+  font-size: 1.5em;
+}
+/*# sourceMappingURL=index.css.map */
