@@ -21,5 +21,5 @@ jobs:
           port: '${{ secrets.SFTP_PORT }}'
           ssh_private_key: ${{ secrets.SFTP_PRIVKEY }} 
           local_path: './src/*'
-          remote_path: '/var/www/sftp/gmod/familyguy'
+          remote_path: '/var/www/sftp/gmod/fgdrp'
           args: '-o ConnectTimeout=5'
