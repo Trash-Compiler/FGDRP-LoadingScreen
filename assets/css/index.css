@@ -19,8 +19,8 @@ strong {
   top: 1em;
   left: 1em;
   color: white;
-  -webkit-filter: drop-shadow(0 0 0.8rem black);
-          filter: drop-shadow(0 0 0.8rem black);
+  -webkit-filter: drop-shadow(0 0 0.5rem black);
+          filter: drop-shadow(0 0 0.5rem black);
 }
 
 .topleft .titleWelcome {
@@ -40,8 +40,8 @@ strong {
   bottom: 1em;
   left: 1em;
   color: white;
-  -webkit-filter: drop-shadow(0 0 0.8rem black);
-          filter: drop-shadow(0 0 0.8rem black);
+  -webkit-filter: drop-shadow(0 0 0.5rem black);
+          filter: drop-shadow(0 0 0.5rem black);
 }
 
 .bottomleft p {
