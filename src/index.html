@@ -40,14 +40,14 @@
         <div class="loading-box"></div>
     </main>
 
-    <audio src="./assets/audio/theme.ogg" autoplay loop></audio>
+    <audio src="./assets/audio/theme.ogg" id="theme-aud" autoplay loop></audio>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./assets/js/index.js"></script>
 
     <script>
         // Tone down the volume.
-        document.querySelector(`audio`).volume = 0.05;
+        document.getElementById("theme-aud").volume = 0.05;
     </script>
 </body>
 </html>
