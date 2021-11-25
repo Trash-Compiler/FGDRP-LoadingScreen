@@ -1,0 +1,54 @@
+// Import Custom Font
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+body {
+    margin: auto;
+    padding: auto;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    background: url(../img/background.jpg) no-repeat center center fixed; 
+    background-size: cover;
+}
+
+strong {
+    font-weight: 600;
+    color: #e74c3c;
+}
+
+.topleft {
+    margin: auto;
+    padding: auto;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    color: white;
+    filter: drop-shadow(0 0 0.50rem black);
+
+    .titleWelcome {
+        margin: auto;
+        font-size: 2em;
+    }
+
+    .loading {
+        margin: auto;
+        font-size: 1.5em;
+    }
+}
+
+.bottomleft {
+    margin: auto;
+    padding: auto;
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    color: white;
+    filter: drop-shadow(0 0 0.50rem black);
+
+    p {
+        margin: auto;
+    }
+
+    .tips {
+        font-size: 1.5em;
+    }
+}

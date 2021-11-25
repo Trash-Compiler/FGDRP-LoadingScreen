@@ -1,245 +1,62 @@
-/**
- * Garry's Mod Loading Screen
- * @author DamienVesper
- * @license AGPL-3.0
- */
+//
+const texts = [
+    "Cartman: “I am NOTHING like Family Guy! When I make jokes they are inherent to a story! Deep situational and emotional jokes based on what is relevant and has a point, not just one random interchangeable joke after another!”",
+    "“I am a cop, and you will respect my authoritah!” – Cartman",
+    "“Don’t you dare call me a Cartman!” – Stan",
+    "“Don’t lie, Stan. Lying makes you sterile.” – Mr. Garrison",
+    "“I’m not fat, I’m festively plump.” –Cartman",
+    "“Drugs are bad, mmkay?” –Mr. Mackey",
+    "“All animals kill, and the animals that don’t kill are stupid ones like cows and turtles and stuff.” –Kyle",
+    "“Screw you guys, I’m going home!” –Cartman",
+    "“Hell, everything’s legal in Mexico. It’s the American way!” –Jimbo"
+];
+let count = 0;
+let index = 0;
+let currentText = 0;
+let letter = 0;
 
-/**
- * Configuration for the loading screen.
- */
-const config = {
-    title: `Family Guy Online`, // Title of your server.
+function type() {
+    if (count === texts.length) {
+        count = 0;
+    }
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
 
-    test: {
-        serverURL: `alru.xyz`, // The IP to your server.
-        mapName: `Map Name`, // The name of the map on your server.
-        maxPlayers: 128 // Number of player slots on your server.
-    },
+    document.querySelector(".tips").textContent = letter;
+    if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 1000)
+        return;
+    }
+    setTimeout(type, 50)
+}
 
-    enableMap: true, // Enable map text in the top left corner of the screen?
-    enableSteamID: true, // Enable steamID text in the top right corner of the screen?
-    enableAnnouncements: true, // Enable announcements?
-    announceMessages: [
-        `Enjoy your stay!`,
-        `Join our Discord at discord.alru.xyz!`,
-        `Loading Screen made by DamienVesper#5225`
-    ],
-    announcementLength: 3e3, // Duration of an announcement, in milliseconds.
-    backgroundImage: ``, // Optional background image.
-    enableDebug: false // Enable debug messages?
-};
+// Random Backgrounds
+const backgrounds = [
+    "assets/img/background.jpg",
+    "assets/img/background2.jpg",
+    "assets/img/background3.jpg",
+    "assets/img/background4.jpg",
+    "assets/img/background5.jpg",
+    "assets/img/background6.jpg",
+]
+let curBackground = 0;
 
-let isGmod = false;
-let isTest = false;
-let totalFiles = 50;
-let totalCalled = false;
-let downloadingFileCalled = false;
-let percentage = 0;
-let permanent = false;
-let allowIncrement = true;
-
-/**
- * Print debug content to console.
- * @param {string} content The content to print.
- */
-const debug = (content) => {
-    if (!config.enableDebug) return;
-
-    $(`#debug`).prepend(`${content}<br />`);
-    console.log(`[DEBUG]: ${content}`);
-};
-
-/**
- * Announce a message.
- * @param {string} message The message to announce.
- * @param {boolean?} isPermanent Whether the message should stay permanently onscreen.
- */
-const announce = (message, isPermanent) => {
-    if (config.enableAnnouncements && !permanent) {
-        $(`#announcement`).hide();
-        $(`#announcement`).html(message);
-        $(`#announcement`).fadeIn();
+function cycleBackground() {
+    if (curBackground === backgrounds.length) {
+        curBackground = 0;
     }
 
-    if (isPermanent) permanent = true;
-};
+    document.body.style.background = `#f3f3f3 url('${backgrounds[curBackground]}') no-repeat center center fixed`;
+    document.body.style["background-size"] = "cover";
 
-/**
- * Set game details.
- * @author DamienVesper
- * @param {string?} serverName The name of the server.
- * @param {string} serverURL The IP of the server.
- * @param {string} mapName The name of the map.
- * @param {number} maxPlayers The maximum number of players.
- * @param {string} steamID The steam ID of the current player.
- * @param {string} gameMode The gamemode of the current player.
- */
-function GameDetails (serverName, serverURL, mapName, maxPlayers, steamID, gameMode) {
-    debug(`Initialized game details.`);
-    isGmod = true;
+    curBackground++;
+    setTimeout(cycleBackground, 7000)
+}
 
-    // Load menu.
-    if (!isTest) loadAll();
-
-    // Set the server title.
-    $(`#title`).html(config.title || serverName);
-    $(`#title`).fadeIn();
-
-    if (config.enableMap) {
-        $(`#map`).append(mapName);
-        $(`#map`).fadeIn();
-    } else $(`#map`).hide();
-
-    if (config.enableSteamID) {
-        $(`#steamid`).html(steamID);
-        $(`#steamid`).fadeIn();
-    }
-};
-
-/**
- * Set the total number of files to download.
- * @param {number} total The number of files.
- */
-function SetFilesTotal (total) {
-    debug(`Setting the number of total files: ${total}.`);
-
-    totalFiles = total;
-    totalCalled = true;
-};
-
-/**
- * Sets the number of files remaining.
- * @param {number} needed The number of files.
- */
-function SetFilesNeeded (needed) {
-    debug(`Setting the number of needed files: ${needed}.`);
-
-    if (totalCalled) {
-        percentage = 100 - Math.round((needed / totalFiles) * 100);
-        setLoad(percentage);
-    }
-};
-
-const fileCount = 0;
-
-/**
- * Download a file.
- * @param {string} fileName The name of the file.
- */
-function DownloadingFile (fileName) {
-    fileName = fileName.replace(`'`, ``).replace(`?`, ``);
-    downloadingFileCalled = true;
-
-    debug(`Downloading file: ${fileName}.`);
-
-    $(`#history`).prepend(`<div class="history-item">${fileName}</div>`);
-    $(`.history-item`).each((i, f) => {
-        if (i > 10) $(f).remove();
-        else $(f).css(`opacity`, `${1 - (i * 0.1)}`);
-    });
-};
-
-/**
- * Set the status.
- * @param {string} status The current status.
- */
-function SetStatusChanged (status) {
-    debug(`Setting status: ${status}.`);
-
-    $(`#history`).prepend(`<div class="history-item">${status}</div>`);
-    $(`.history-item`).each((i, f) => {
-        if (i > 10) $(f).remove();
-        else $(f).css(`opacity`, `${1 - (i * 0.1)}`);
-    });
-
-    if (status === `Workshop Complete`) {
-        allowIncrement = false;
-        setLoad(80);
-    } else if (status === `Client info sent!`) {
-        allowIncrement = false;
-        setLoad(95);
-    } else if (status === `Starting Lua...`) {
-        setLoad(100);
-    } else {
-        if (allowIncrement) {
-            percentage += 0.1;
-            setLoad(percentage);
-        }
-    }
-};
-
-/**
- * Load all components.
- */
-const loadAll = () => {
-    $(`nav`).fadeIn();
-    $(`main`).fadeIn();
-
-    setTimeout(() => {
-        if (!downloadingFileCalled) return;
-
-        // Consider the player to be loading for the first time if files are not being downloaded after a prolonged period of time.
-        debug(`Player has loaded for the first time: ${!downloadingFileCalled}`);
-        announce(`This is your first time loading, please wait for the files to download!`, true);
-    }, 1e4);
-};
-
-/**
- * Load the background.
- */
-const loadBackground = () => {
-    if (config.backgroundImage) $(`.background`).css(`background-image`, `url('./images/${config.backgroundImage}');`);
-};
-
-/**
- * Set the loading bar's progress.
- * @param {number} percentage The current percentage.
- */
-const setLoad = (percentage) => {
-    debug(`${percentage}% Loaded`);
-    $(`.overhaul`).css(`left`, `${percentage}%`);
-};
-
-$(document).ready(() => {
-    // Load everything in when ready.
-    loadBackground();
-
-    // Print announcement mesasges every few seconds.
-    if (config.announceMessages && config.enableAnnouncements) {
-        if (config.announceMessages.length > 0) {
-            let i = 0;
-            setInterval(() => {
-                announce(config.announceMessages[i]);
-                i++;
-
-                if (i > config.announceMessages.length - 1) i = 0;
-            }, config.announcementLength);
-        }
-    }
-
-    // If it isn't loaded by Gmod load manually.
-    setTimeout(() => {
-        if (!isGmod) {
-            debug(`Not running Gmod!`);
-            isTest = true;
-
-            loadAll();
-
-            GameDetails(config.title, config.test.serverURL, config.test.mapName, config.test.maxPlayers, `SteamID`, `GameMode`);
-
-            const totalTestFiles = 100;
-            SetFilesTotal(totalTestFiles);
-
-            let needed = totalTestFiles;
-
-            setInterval(() => {
-                if (needed > 0) {
-                    needed = needed - 1;
-                    SetFilesNeeded(needed);
-                    DownloadingFile(`Filename ${needed}`);
-                }
-            }, 500);
-            SetStatusChanged(`Testing...`);
-        }
-    }, 1e3);
-});
+// Load Everything
+window.onload = () => {
+    type();
+    cycleBackground();
+}
