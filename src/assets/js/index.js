@@ -30,7 +30,7 @@ const backgrounds = [
     "assets/img/background.jpg",
 ]
 let curBackground = 0;
-// x
+
 function cycleBackground() {
     if (curBackground === backgrounds.length) {
         curBackground = 0;
