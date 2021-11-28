@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South Park DarkRP</title>
 
-    <!-- Import CSS -->
+    <title>Family Guy Online</title>
+    <meta name="description" content="The Family Guy Gmod DarkRP server.">
+
+    <meta property="og:title" content="Family Guy Online">
+    <meta property="og:description" content="The Family Guy Gmod DarkRP server.">
+
+    <meta property="og:site_name" content="Family Guy Online">
+    <meta property="og:url" content="https://sftp.alru.xyz/html/familyguy/">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed|Ubuntu+Mono&display=swap">
     <link rel="stylesheet" href="./assets/css/index.css">
-
-    <!-- Import JavaScript -->
-    <script src="./assets/js/index.js"></script>
-
-    <!-- OG Tags -->
-    <meta property="og:title" content="South Park DarkRP - Loading Screen" />
-    <meta property="og:description" content="Loading screen for South Park DarkRP!" />
-
-    <!-- Color -->
-    <meta name="theme-color" content="#e74c3c">
 </head>
 <body>
-    <div class="topleft">
-        <p class="titleWelcome">Welcome to <strong>South Park DarkRP</strong>!</p>
-        <p class="loading">Please Wait...</p>
-    </div>
+    <div class="background"></div>
+    <div class="overhaul"></div>
 
-    <div class="bottomleft">
-        <p class="tips">Welcome!</p>
-    </div>
+    <nav>
+        <div id="announcement"></div>
+        <span id="map">You're playing on </span>
+        <span id="steamid"></span>
+    </nav>
+
+    <div id="debug"></div>
+
+    <main>
+        <div class="title">
+            <h2>Welcome to</h2>
+            <h1 id="title"></h1>
+            <div id="history"></div>
+        </div>
+        <div class="under-nav"></div>
+        <div class="loading-box"></div>
+    </main>
+
+    <audio src="./assets/audio/theme.ogg" id="theme-aud" autoplay loop></audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/js/index.js"></script>
+
+    <script>
+        // Tone down the volume.
+        document.getElementById("theme-aud").volume = 0.05;
+    </script>
 </body>
 </html>
