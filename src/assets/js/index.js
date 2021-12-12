@@ -1,6 +1,6 @@
 /**
  * Garry's Mod Loading Screen
- * @author DamienVesper
+ * @author Zeropoint
  * @license AGPL-3.0
  */
 
@@ -66,7 +66,7 @@ const announce = (message, isPermanent) => {
 
 /**
  * Set game details.
- * @author DamienVesper
+ * @author Zeropoint
  * @param {string?} serverName The name of the server.
  * @param {string} serverURL The IP of the server.
  * @param {string} mapName The name of the map.
