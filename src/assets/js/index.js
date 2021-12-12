@@ -21,8 +21,8 @@ const config = {
     enableAnnouncements: true, // Enable announcements?
     announceMessages: [
         `Enjoy your stay!`,
-        `Join our Discord at discord.alru.xyz!`,
-        `Loading Screen made by DamienVesper#5225`
+        `Join our Discord at discord.alru.cc!`,
+        `Gamemode Made By zeropoint#9798`
     ],
     announcementLength: 3e3, // Duration of an announcement, in milliseconds.
     backgroundImage: ``, // Optional background image.
