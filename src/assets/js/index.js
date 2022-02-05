@@ -8,10 +8,10 @@
  * Configuration for the loading screen.
  */
 const config = {
-    title: `Family Guy Online`, // Title of your server.
+    title: `Family Guy DarkRp`, // Title of your server.
 
     test: {
-        serverURL: `alru.xyz`, // The IP to your server.
+        serverURL: `voyager.banabyte.com`, // The IP to your server.
         mapName: `Map Name`, // The name of the map on your server.
         maxPlayers: 128 // Number of player slots on your server.
     },
@@ -21,7 +21,7 @@ const config = {
     enableAnnouncements: true, // Enable announcements?
     announceMessages: [
         `Enjoy your stay!`,
-        `Join our Discord at discord.alru.cc!`,
+        `Join our Discord at discord.banabyte.com!`,
         `Gamemode Made By zeropoint#9798`
     ],
     announcementLength: 3e3, // Duration of an announcement, in milliseconds.
