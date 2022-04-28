@@ -12,7 +12,7 @@ const config = {
 
     test: {
         serverURL: `voyager.banabyte.com`, // The IP to your server.
-        mapName: `Map Name`, // The name of the map on your server.
+        mapName: `rp_simplytown_v2`, // The name of the map on your server.
         maxPlayers: 128 // Number of player slots on your server.
     },
 
