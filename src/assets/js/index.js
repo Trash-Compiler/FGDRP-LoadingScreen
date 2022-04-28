@@ -238,7 +238,7 @@ $(document).ready(() => {
                     SetFilesNeeded(needed);
                     DownloadingFile(`Filename ${needed}`);
                 }
-            }, 500);
+            }, 2500);
             SetStatusChanged(`Testing...`);
         }
     }, 1e3);
