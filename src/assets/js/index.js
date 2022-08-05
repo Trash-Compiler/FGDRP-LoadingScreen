@@ -24,8 +24,8 @@ const config = {
         'Can I buy some propane.',
         'Lion is a karen',
         'MEG GRIFFIN',
-        '',
-        '',
+        'Among us',
+        'Family guy',
         `Enjoy your stay!`,
         `Join our Discord at discord.banabyte.com!`,
         `Gamemode Made By zeropoint#9798`
