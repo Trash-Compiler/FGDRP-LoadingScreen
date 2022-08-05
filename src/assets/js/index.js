@@ -1,7 +1,7 @@
 /**
  * Garry's Mod Loading Screen
  * @author Zeropoint
- * @license AGPL-3.0
+ * @license MIT
  */
 
 /**
@@ -11,8 +11,8 @@ const config = {
     title: `Family Guy DarkRp`, // Title of your server.
 
     test: {
-        serverURL: `voyager.banabyte.com`, // The IP to your server.
-        mapName: `rp_simplytown_v2`, // The name of the map on your server.
+        serverURL: `apollo.banabyte.com`, // The IP to your server.
+        mapName: `RP_FGDRP_SIMPLYTOWN`, // The name of the map on your server.
         maxPlayers: 128 // Number of player slots on your server.
     },
 
@@ -20,11 +20,17 @@ const config = {
     enableSteamID: true, // Enable steamID text in the top right corner of the screen?
     enableAnnouncements: true, // Enable announcements?
     announceMessages: [
+        'TheRandomguy98 is peter griffin.',
+        'Can I buy some propane.',
+        'Lion is a karen',
+        'MEG GRIFFIN',
+        '',
+        '',
         `Enjoy your stay!`,
         `Join our Discord at discord.banabyte.com!`,
         `Gamemode Made By zeropoint#9798`
     ],
-    announcementLength: 3e3, // Duration of an announcement, in milliseconds.
+    announcementLength: 5000, // Duration of an announcement, in milliseconds.
     backgroundImage: ``, // Optional background image.
     enableDebug: false // Enable debug messages?
 };
@@ -238,8 +244,8 @@ $(document).ready(() => {
                     SetFilesNeeded(needed);
                     DownloadingFile(`Filename ${needed}`);
                 }
-            }, 2500);
+            }, 4500);
             SetStatusChanged(`Testing...`);
         }
-    }, 1e3);
+    }, 25000);
 });
