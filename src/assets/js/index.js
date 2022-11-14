@@ -1,6 +1,6 @@
 /**
  * Garry's Mod Loading Screen
- * @author Zeropoint
+ * @author DamienVesper
  * @license MIT
  */
 
