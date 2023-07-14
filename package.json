@@ -1,13 +1,11 @@
 {
     "name": "@banabyte/fgdrp-loadingscreen",
-    "description": "The Banabyte website.",
+    "description": "The Family Guy DarkRP loading screen.",
     "version": "1.0.0",
     "private": true,
     "scripts": {
-      "build": "webpack --config ./webpack/webpack.prod.ts",
-      "dev": "webpack serve --config ./webpack/webpack.dev.ts",
-      "lint": "eslint . --fix --ext .{ts,tsx,js,jsx,svelte}",
-      "lint:ci": "eslint . --ext .{ts,tsx,js,jsx,svelte}"
+      "lint": "eslint . --fix --ext .js",
+      "lint:ci": "eslint . --ext .js"
     },
     "engines": {
       "pnpm": ">=8.0.0",
@@ -15,22 +13,21 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/Banabyte/banabyte.com.git"
+      "url": "git+https://github.com/Banabyte/FGDRP-LoadingScreen.git"
     },
     "author": "DamienVesper",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/Banabyte/banabyte.com/issues"
+      "url": "https://github.com/Banabyte/FGDRP-LoadingScreen/issues"
     },
     "homepage": "https://cdn.banabyte.com/gmod/load/fgdrp",
     "devDependencies": {
-		"@babel/core": "^7.22.9",
-		"@babel/eslint-parser": "^7.22.9",
-		"eslint": "^8.45.0",
-		"eslint-config-standard": "^17.1.0",
-		"eslint-plugin-import": "^2.27.5",
-		"eslint-plugin-n": "^16.0.1",
-		"eslint-plugin-promise": "^6.1.1"
+      "@babel/core": "^7.22.9",
+      "@babel/eslint-parser": "^7.22.9",
+      "eslint": "^8.45.0",
+      "eslint-config-standard": "^17.1.0",
+      "eslint-plugin-import": "^2.27.5",
+      "eslint-plugin-n": "^16.0.1",
+      "eslint-plugin-promise": "^6.1.1"
     }
 }
-  

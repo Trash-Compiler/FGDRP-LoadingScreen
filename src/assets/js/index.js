@@ -11,8 +11,8 @@ const config = {
     title: `Family Guy DarkRp`, // Title of your server.
 
     test: {
-        serverURL: `apollo.banabyte.com`, // The IP to your server.
-        mapName: `RP_FGDRP_SIMPLYTOWN`, // The name of the map on your server.
+        serverURL: `co-us01.gs.banabyte.com:40009`, // The IP to your server.
+        mapName: `rp_downtown_modern`, // The name of the map on your server.
         maxPlayers: 128 // Number of player slots on your server.
     },
 
@@ -20,8 +20,14 @@ const config = {
     enableSteamID: true, // Enable steamID text in the top right corner of the screen?
     enableAnnouncements: true, // Enable announcements?
     announceMessages: [
-        'The Game is Euchre',
-        'Breaking Bad or the Wire','Dont go talk to random98 hes meg','Peter what are you doing','Daddy i want a turn on the swing set','Donkey Kong Secret Level','Hey Peter'],
+        `The Game is Euchre`,
+        `Breaking Bad or the Wire`,
+        `Dont go talk to random98 hes meg`,
+        `Peter what are you doing`,
+        `Daddy i want a turn on the swing set`,
+        `Donkey Kong Secret Level`,
+        `Hey Peter`
+    ],
     announcementLength: 5000, // Duration of an announcement, in milliseconds.
     backgroundImage: ``, // Optional background image.
     enableDebug: false // Enable debug messages?
@@ -92,7 +98,7 @@ function GameDetails (serverName, serverURL, mapName, maxPlayers, steamID, gameM
         $(`#steamid`).html(steamID);
         $(`#steamid`).fadeIn();
     }
-};
+}
 
 /**
  * Set the total number of files to download.
@@ -103,7 +109,7 @@ function SetFilesTotal (total) {
 
     totalFiles = total;
     totalCalled = true;
-};
+}
 
 /**
  * Sets the number of files remaining.
@@ -116,7 +122,7 @@ function SetFilesNeeded (needed) {
         percentage = 100 - Math.round((needed / totalFiles) * 100);
         setLoad(percentage);
     }
-};
+}
 
 const fileCount = 0;
 
@@ -135,7 +141,7 @@ function DownloadingFile (fileName) {
         if (i > 10) $(f).remove();
         else $(f).css(`opacity`, `${1 - (i * 0.1)}`);
     });
-};
+}
 
 /**
  * Set the status.
@@ -164,7 +170,7 @@ function SetStatusChanged (status) {
             setLoad(percentage);
         }
     }
-};
+}
 
 /**
  * Load all components.
