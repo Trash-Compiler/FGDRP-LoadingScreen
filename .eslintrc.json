@@ -1,0 +1,22 @@
+{
+    "env": {
+        "browser": true,
+        "es2022": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "standard"
+    ],
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false
+    },
+    "rules": {
+        "indent": [1, 4, { "SwitchCase": 1 }],
+        "semi": [1, "always"],
+        "quotes": [1, "backtick", "avoid-escape"],
+        "no-use-before-define": 0,
+        "no-unused-vars": 0,
+        "curly": 0
+    }
+}
