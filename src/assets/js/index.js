@@ -8,7 +8,7 @@
  * Configuration for the loading screen.
  */
 const config = {
-    title: `Family Guy DarkRp`, // Title of your server.
+    title: `Family Guy DarkRP on Source 2`, // Title of your server.
 
     test: {
         serverURL: `co-us01.gs.banabyte.com:40009`, // The IP to your server.
