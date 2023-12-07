@@ -8,10 +8,10 @@
  * Configuration for the loading screen.
  */
 const config = {
-    title: `Family Guy DarkRP on Source 2`, // Title of your server.
+    title: `Family Guy DarkRP Returns`, // Title of your server.
 
     test: {
-        serverURL: `co-us01.gs.banabyte.com:40009`, // The IP to your server.
+        serverURL: `co-us02.banabyte.com:45130`, // The IP to your server.
         mapName: `rp_downtown_modern`, // The name of the map on your server.
         maxPlayers: 128 // Number of player slots on your server.
     },
@@ -26,7 +26,10 @@ const config = {
         `Peter what are you doing`,
         `Daddy i want a turn on the swing set`,
         `Donkey Kong Secret Level`,
-        `Hey Peter`
+        `Hey Peter`,
+        `They Brough Peter Griffin to Fortnite`,
+        `Hey Lois`,
+        `Shutup Meg`
     ],
     announcementLength: 5000, // Duration of an announcement, in milliseconds.
     backgroundImage: ``, // Optional background image.
