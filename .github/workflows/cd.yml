@@ -26,3 +26,4 @@ jobs:
           ssh_private_key: ${{ secrets.SFTP_PRIVKEY }} 
           local_path: './src/*'
           remote_path: '/var/www/cdn.banabyte.com/gmod/load/fgdrp'
+          delete_remote_files: true
