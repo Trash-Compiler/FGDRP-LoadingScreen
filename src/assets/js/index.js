@@ -21,19 +21,20 @@ const config = {
     enableAnnouncements: true, // Enable announcements?
     announceMessages: [
         `The Game is Euchre`,
-        `Breaking Bad or the Wire`,
-        `Dont go talk to random98 hes meg`,
+        `Breaking Bad or The Wire`,
+        `Don't go talk to random98, he's meg`,
         `Peter what are you doing`,
-        `Daddy i want a turn on the swing set`,
+        `Daddy I want a turn on the swing set`,
         `Donkey Kong Secret Level`,
         `Hey Peter`,
-        `They Brough Peter Griffin to Fortnite`,
+        `They Brought Peter Griffin to Fortnite`,
         `Hey Lois`,
-        `Shutup Meg`
+        `Shut up Meg`
     ],
     announcementLength: 5000, // Duration of an announcement, in milliseconds.
     backgroundImage: ``, // Optional background image.
-    enableDebug: false // Enable debug messages?
+    enableDebug: false, // Enable debug messages?
+    debugTimeout: 6e4 // Timeout duration before showing testing messages, in milliseconds.
 };
 
 let isGmod = false;
@@ -248,5 +249,5 @@ $(document).ready(() => {
             }, 4500);
             SetStatusChanged(`Testing...`);
         }
-    }, 25000);
+    }, config.debugTimeout);
 });
