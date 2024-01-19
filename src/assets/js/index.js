@@ -34,7 +34,7 @@ const config = {
     announcementLength: 5000, // Duration of an announcement, in milliseconds.
     backgroundImage: ``, // Optional background image.
     enableDebug: false, // Enable debug messages?
-    debugTimeout: 6e4 // Timeout duration before showing testing messages, in milliseconds.
+    debugTimeout: 3e4 // Timeout duration before showing testing messages, in milliseconds.
 };
 
 let isGmod = false;
@@ -246,7 +246,7 @@ $(document).ready(() => {
                     SetFilesNeeded(needed);
                     DownloadingFile(`Filename ${needed}`);
                 }
-            }, 4500);
+            }, 500);
             SetStatusChanged(`Testing...`);
         }
     }, config.debugTimeout);
